@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "CompanyName": "Google",
+        "CompanyWebsite": "www.Google.com",
+        "CompanyPhoneNumber" : "9635284286",
+        "CompanyAddress": "whitefield",
+        "CompanyCity" : "Bangalore",
+        "CompanyState" :"Karnataka",
+        "CompanyCountry" :"India",
+        "IndustryList" : "IT"
+    },
+    {
+        "id": 2,
+        "CompanyName": "Microsoft",
+        "CompanyWebsite": "www.Microsoft.com",
+        "CompanyPhoneNumber" : "6852486245",
+        "CompanyAddress": "one microsoft way",
+        "CompanyCity" : "Redmond",
+        "CompanyState" :"washington",
+        "CompanyCountry" :"USA",
+        "IndustryList" : "IT"
+    },
+    {
+        "id": 3,
+        "CompanyName": "apple",
+        "CompanyWebsite": "www.apple.com",
+        "CompanyPhoneNumber" : "9876543210",
+        "CompanyAddress": "1 Infinite Loop",
+        "CompanyCity" : "Cupertino",
+        "CompanyState" :"California",
+        "CompanyCountry" :"USA",
+        "IndustryList" : "IT"
+    },
+    {
+        "id": 4,
+        "CompanyName": "facebook",
+        "CompanyWebsite": "www.facebook.com",
+        "CompanyPhoneNumber" : "9876565824",
+        "CompanyAddress": "1 hacker way",
+        "CompanyCity" : "menlo park",
+        "CompanyState" :"California",
+        "CompanyCountry" :"USA",
+        "IndustryList" : "IT"
+    },
+    {
+        "id": 5,
+        "CompanyName": "amazon",
+        "CompanyWebsite": "www.amazon.com",
+        "CompanyPhoneNumber" : "9876565824",
+        "CompanyAddress": "sunnyvale",
+        "CompanyCity" : "seattle",
+        "CompanyState" :"california",
+        "CompanyCountry" :"USA",
+        "IndustryList" : "IT"
+    }
+
+]

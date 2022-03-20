@@ -4,13 +4,13 @@ const firebaseApp = firebase.initializeApp({
       
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-    apiKey: "AIzaSyDNOaGTaIsr-x17ZSzltUaW5gQ_8Ko-lkE",
-    authDomain: "instagram-clone-8e3e2.firebaseapp.com",
-    projectId: "instagram-clone-8e3e2",
-    storageBucket: "instagram-clone-8e3e2.appspot.com",
-    messagingSenderId: "872884534199",
-    appId: "1:872884534199:web:9338478fe31d4dc55e4632",
-    measurementId: "G-XPSFVM9YQX"
+    apiKey: "AIzaSyCIJdTZO8kBU10QBAuf3FckhhWDT2MbvKE",
+    authDomain: "recruitmentapp-1fd3b.firebaseapp.com",
+    projectId: "recruitmentapp-1fd3b",
+    storageBucket: "recruitmentapp-1fd3b.appspot.com",
+    messagingSenderId: "45723745502",
+    appId: "1:45723745502:web:28a6421f44e932d5c2d64f",
+    measurementId: "G-Z65T22BCTK"
   
 
 });
@@ -21,7 +21,6 @@ const storage = firebase.storage();
 
 export { db, auth, storage}
 //   export default firebaseConfig;
-
 
 
 

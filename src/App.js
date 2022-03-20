@@ -1,12 +1,11 @@
 import React, { useState , useEffect} from 'react';
 import './App.css';
-import Post from "./Post.js";
-import {db, auth} from './firebase';
+import {auth} from './firebase';
 import Modal from '@material-ui/core/Modal';
 import {makeStyles} from '@material-ui/core/styles';
 import { Button , Input } from '@material-ui/core';
-import ImageUpload from './ImageUpload';
-//  import InstagramEmbed from 'react-instagram-embed';
+import Table from './Table';
+
 
 function getModalStyle() {
   const top = 50;
@@ -36,11 +35,12 @@ function App() {
    const classes = useStyles();
    const[modalStyle] = useState(getModalStyle);
    
-  const [posts, setPosts] = useState([]);
+  
   const [username , setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
-  // here hook is used for the function. hook is very powerfull command function which uses the state function. 
+  // here hook is used for the function. 
+  //hook is very powerful command function which uses the state function. 
   const [open, setOpen] = useState(false); 
   const [openSignIn, setOpenSignIn] = useState(false);
   const [user, setUser] = useState(null);
@@ -60,28 +60,16 @@ function App() {
      })
 
      return () => {
-        // unnessasoery id creation
-        // catch the listner so that it can not fave dublicate        
+        // unnecessary id creation
+        // catch the listener so that it can not have duplicate        
          unsubscribe();
      }
   }, [user, username] );
 
 
 
-  // useEffect refresh the page of any perticular block 
-   useEffect(() => {
-    //  if anybody adds a posts its always updates the posts 
-     db.collection('posts')
-     .orderBy('timestamp' , 'desc')
-    //  order by functon uses the timestamp of the firebase and arrange the post according to that
-     .onSnapshot(snapshot => {
-       setPosts(snapshot.docs.map(doc => ({
-         id: doc.id,
-         post: doc.data()
-       })));
-
-     })
-   }, []);
+  // useEffect refresh the page of any particular block 
+  
   
    const signUp = (event) => {
        event.preventDefault();
@@ -109,22 +97,19 @@ function App() {
     setOpenSignIn(false)
    }
 
-  return (
+    return (
     <div className="app">
       
       <Modal
-        //  the source code is from modal form the material ui.  as it uses the popup to enter the user's email id and password.
+        //  the source code is from modal from the material ui.  as it uses the popup to enter the user's email id and password.
            open={open}
            onClose={() => setOpen(false)}>
 
            <div style={modalStyle} className={classes.paper}>
-            {/* popup for the singup is made here */}
+           
             <form className="app__signup">
             <center>
-        <img className="app__headerImage"
-        src="https://www.freepngimg.com/thumb/logo/69859-logo-photography-font-instagram-typography-png-image-high-quality-thumb.png"
-        alt=""
-        />
+       <h1>Create an Account</h1>
      </center>
           <Input
           placeholder="username"
@@ -150,20 +135,17 @@ function App() {
  
     </div>
 </Modal>
- 
-<Modal
+
+      <Modal
         //  the source code is from modal form the material ui.  as it uses the popup to enter the user's email id and password.
            open={openSignIn}
            onClose={() => setOpenSignIn(false)}>
 
            <div style={modalStyle} className={classes.paper}>
-            {/* popup for the singup is made here */}
+            {/* popup for the signup is made here */}
             <form className="app__signup">
             <center>
-        <img className="app__headerImage"
-        src="https://www.freepngimg.com/thumb/logo/69859-logo-photography-font-instagram-typography-png-image-high-quality-thumb.png"
-        alt=""
-        />
+            <h1>Sign In</h1>
      </center>
           
         <Input
@@ -186,11 +168,7 @@ function App() {
 </Modal>
 
      <div className="app__header">
-      <img 
-      className="app__headerImage"
-        src= "https://www.freepngimg.com/thumb/logo/69859-logo-photography-font-instagram-typography-png-image-high-quality-thumb.png"
-       alt=""
-       />
+     <h1>Recruitment App</h1>
 
       {user ? (
         <Button onClick = {() => auth.signOut()}>Logout</Button>
@@ -201,25 +179,17 @@ function App() {
         </div>
       )}
     </div>
- 
-        <div className="app__posts">
-       {
-         posts.map(({id, post}) => (
-          //  here id is used to extend the user identity with the individual key constants
-           <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
-          // here key={id} is used for it is used to get the new post without rerendering the old post
-           ))
-       }
-        </div>
-             
            
        {user?.displayName ? (
-                <ImageUpload username={user.displayName}/>
+         <>
+              <h1 className ="login">Welcome {user.displayName} !!</h1>
+              <Table />
+         </>
           ): (
-            <h3>you need to login and signup</h3>
+            <h1 className ="login">You Need to Login or Signup to Continue</h1>
           )}
          
-
+    
     </div>
 
   );

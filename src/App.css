@@ -6,39 +6,43 @@
   background-color: #fafafa;
 }
 
-.app__posts {
-  padding: 20px;
-  display: row;
-  /* justify-content: center; */
-}
+
 
 .app__header {
   /* this help the position of the border to stick at one place  */
   position: sticky;
   top: 0;
-  background-color: white;
+  background-color: gray;
   padding: 5px;
   border-bottom: 1px solid lightgray;
   object-fit: contain;
   display: flex;
   justify-content: space-between;
+  z-index: 1;
 }
 /* padding is inside space */
 /* margin is outside space  */
 
-.app__headerImage {
-  object-fit: contain;
-  background-color: white;
-  width:200px;
-  height:60px;
+
   
-}
+
 
 .app__signup {
   display: flex;
   flex-direction: column;
 }
 
-.app__headerImage {
-  object-fit: contain;
+
+
+.app__loginContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
